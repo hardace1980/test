@@ -1,0 +1,13 @@
+-name: Playbook ALL in ONE
+ host: all
+ become: yes
+
+tasks:
+- name: Upgrade all packages to the latest version
+ apt:
+  name: "*"
+  state: latest
+
+- name: Update all packages to the latest version
+ apt:
+  upgrade: dist
