@@ -1,28 +1,22 @@
-Vagrant.configure("2") do |config|
-
+Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  
-# добавляем машину для использования в качестве веб-сервера с установленным apache 2.4
-  config.vm.define "web" do |machine|
-    machine.vm.network "private_network", ip: "10.10.0.10"
-  end
-  
-# добавляем машину для использования в качестве сервера базы данных с установленным MySQL
-  config.vm.define "db" do |machine|
-    machine.vm.network "private_network", ip: "10.10.0.11"
-  end
-  
-# добавляем машину для использования в качестве сервера управления Ansible
-  config.vm.define 'controller' do |machine|
-    machine.vm.network "private_network", ip: "10.10.0.12"
+  config.vm.box_check_update = false
 
-    machine.vm.provision :ansible_local do |ansible|
-      ansible.playbook       = "playbook.yml"
-      ansible.verbose        = true
-      ansible.install        = true
-      ansible.limit          = "all"
-      ansible.inventory_path = "hosts"
-    end
+  config.vm.define "web" do |web|
+      web.vm.network  "public_network", ip: "10.10.0.2"
+      web.vm.hostname = "web"  
+      web.vm.provider "virtualbox" do |vb|
+         vb.memory = "1024"
+      end
   end
+
+ config.vm.define "db" do |db|
+     db.vm.network "public_network", ip: "10.10.0.3"
+     db.vm.hostname = "db"  
+     db.vm.provider "virtualbox" do |vb|
+         vb.memory = "1024"
+     end
+ end
+
 
 end

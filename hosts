@@ -1,5 +1,5 @@
 controller ansible_connection=local
 [web]
-web ansible_ssh_host=10.10.0.10 ansible_ssh_private_key_file=/vagrant/.vagrant/machines/web/virtualbox/private_key
+web ansible_ssh_host=10.0.0.2 ansible_ssh_user=vagrant
 [db]
-db ansible_ssh_host=10.10.0.11 ansible_ssh_private_key_file=/vagrant/.vagrant/machines/db/virtualbox/private_key
+db ansible_ssh_host=10.0.0.3 ansible_ssh_user=vagrant
