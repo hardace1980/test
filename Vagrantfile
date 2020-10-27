@@ -18,12 +18,4 @@ Vagrant.configure(2) do |config|
      end
  end
 
- config.vm.define "controller" do |controller|
-     controller.vm.network "public_network", ip: "192.168.88.52"
-     controller.vm.hostname = "controller"  
-     controller.vm.provider "virtualbox" do |vb|
-         vb.memory = "1024"
-     end
- end
-
 end
