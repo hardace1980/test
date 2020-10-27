@@ -1,0 +1,13 @@
+- name: Playbook
+  hosts: all
+  become: yes
+  
+tasks:
+ - name: Upgrade all packages to latest version
+   apt:
+     name: "*"
+     state: latest
+    
+ - name: Update all packages to latest version
+   apt:
+     upgrade: dist
