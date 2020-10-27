@@ -22,7 +22,6 @@ Vagrant.configure("2") do |config|
       ansible.install        = true
       ansible.limit          = "all"
       ansible.inventory_path = "hosts"
-	  ansible.ansible_config = "ansible.cfg"
     end
   end
 
