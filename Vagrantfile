@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
-  config.vm.boot_time=600
+  config.vm.boot_timeout = 600
   config.vm.box_check_update = false
 
   config.vm.provider "virtualbox" do |vb|
