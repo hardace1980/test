@@ -1,8 +1,6 @@
 Vagrant.configure(2) do |config|
-
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_check_update = false
-
+  config.vm.provision "shell", inline: "echo Hello"
+  
   config.vm.define "web" do |web|
     web.vm.box = "apache"
   end
