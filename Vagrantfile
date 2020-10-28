@@ -11,11 +11,13 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "web" do |web|
       web.vm.network  "private_network", ip: "10.10.0.2"
-      web.vm.hostname = "web"  
-  end
+      web.vm.hostname = "web"
+	  web.vm.boot_time = 600
+	  end
 
  config.vm.define "db" do |db|
      db.vm.network "private_network", ip: "10.10.0.3"
-     db.vm.hostname = "db"  
+     db.vm.hostname = "db"
+	 db.vm.boot_time = 600
  end
 end
