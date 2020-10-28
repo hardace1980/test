@@ -5,16 +5,10 @@ Vagrant.configure(2) do |config|
   config.vm.define "web" do |web|
       web.vm.network  "public_network", ip: "192.168.88.50"
       web.vm.hostname = "web"  
-      web.vm.provider "virtualbox" do |vb|
-         vb.memory = "1024"
-      end
   end
 
  config.vm.define "db" do |db|
      db.vm.network "public_network", ip: "192.168.88.51"
      db.vm.hostname = "db"  
-     db.vm.provider "virtualbox" do |vb|
-         vb.memory = "1024"
-     end
  end
 end
