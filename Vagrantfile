@@ -2,8 +2,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider "virtualbox" do |vb|
       vb.gui = false
-      vb.memory=256
-      vb.cpus=1
+      vb.memory=1024
+      vb.cpus=2
       vb.check_guest_additions=false
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_check_update = false
