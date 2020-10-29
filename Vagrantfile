@@ -3,7 +3,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_check_update = false
-  config.disksize.size = "20GB"
+  config.vm.disksize.size = "20GB"
   config.vm.hostname = "testing"  
   config.vm.network "public_network", ip: "192.168.1.100"
   config.vm.define "testing"
