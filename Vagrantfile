@@ -14,7 +14,6 @@ Vagrant.configure(2) do |config|
    end
 
    config.vm.define "web" do |web|
-      web.vm.network "public_network"
       web.vm.hostname = "web"
    end
 end
