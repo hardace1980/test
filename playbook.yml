@@ -1,9 +1,0 @@
-- name: Playbook
-  hosts: all
-  become: yes
-  
-  tasks:
-  
-  - name: Ping
-    ping:
-  
